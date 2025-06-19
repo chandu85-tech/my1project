@@ -1,0 +1,9 @@
+body{
+    background-image: url(IMG-20250605-WA0008.jpg);
+}
+.a{
+    text-align: center;
+    border: 5px solid green;
+    text-transform: capitalize;
+    font-size: 15px;
+}
