@@ -1,0 +1,14 @@
+let c =10;
+let  b =20;
+console.log("c=",c, ",b=",b);
+let sum=c+b;
+let differnce = c-b;
+let product = c*b;
+let quotient = c/b;
+let remainder = c%b;
+let exponent = c**b;
+console.log("Sum:",sum);
+console.log("Difference:",differnce);
+console.log("Product:",product);
+console.log("Quotient:",quotient);
+console.log("Remainder:",remainder);
