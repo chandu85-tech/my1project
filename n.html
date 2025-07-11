@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quiz App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #333;
+      font-size: 45px;
+    }
+    h1{
+        text-align: center;
+        text-decoration: line-through;
+        color: #c62828;
+        text-transform: capitalize;
+    }
+
+    #quiz-container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 20px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+
+    #question {
+      font-size: 1.3em;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    #options label {
+      display: block;
+      text-align: left;
+      background: #e0e0e0;
+      padding: 12px 15px;
+      margin: 10px 0;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    #options input[type="radio"] {
+      display: none;
+    }
+
+    /* When a radio is checked, highlight the label */
+    #options input[type="radio"]:checked + label {
+      border-color: #2196f3;
+      background: #bbdefb;
+      font-weight: 700;
+      color: #0b47a1;
+    }
+
+    /* After answer is submitted, color correct/incorrect */
+    .correct {
+      background-color: #c8e6c9 !important;
+      border-color: #2e7d32 !important;
+      color: #2e7d32 !important;
+      font-weight: 700;
+    }
+
+    .incorrect {
+      background-color: #ffcdd2 !important;
+      border-color: #c62828 !important;
+      color: #c62828 !important;
+      font-weight: 700;
+    }
+
+    #timer {
+      height: 6px;
+      background: #2196f3;
+      margin: 20px 0;
+      transform-origin: left;
+      transition: transform 10s linear;
+      border-radius: 3px;
+    }
+
+    #next-btn {
+      padding: 12px 30px;
+      font-size: 1em;
+      border: none;
+      border-radius: 25px;
+      background: #2196f3;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      user-select: none;
+    }
+
+    #next-btn:hover {
+      background: #1769aa;
+    }
+
+    /* Result Modal */
+    #result-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+
+    #result-modal.show {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    #result-modal .modal-content {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 0 15px #444;
+      text-align: center;
+    }
+
+    #result-modal h2 {
+      margin-bottom: 15px;
+      font-weight: 700;
+      color: #2196f3;
+    }
+
+    #star-rating {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: gold;
+    }
+
+    #leaderboard {
+      text-align: left;
+      margin: 20px 0;
+      padding-left: 0;
+      list-style: none;
+      max-height: 150px;
+      overflow-y: auto;
+    }
+
+    #leaderboard li {
+      margin: 6px 0;
+      font-size: 1.1em;
+    }
+
+    #restart-btn {
+      padding: 10px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 25px;
+      background: #4caf50;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+
+    #restart-btn:hover {
+      background: #357a38;
+    }
+  </style>
+</head>
+<body>
+<h1>drag the win</h1>
+  <div id="quiz-container">
+    <div id="question">Question text</div>
+    <div id="options"></div>
+    <div id="timer"></div>
+    <button id="next-btn">Next</button>
+  </div>
+
+  <div id="result-modal">
+    <div class="modal-content">
+      <h2>Your Score: <span id="score">0</span> / 15</h2>
+      <div id="star-rating"></div>
+      <h3>Leaderboard</h3>
+      <ul id="leaderboard"></ul>
+      <button id="restart-btn">Play Again</button>
+    </div>
+  </div>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
