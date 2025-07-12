@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Portfolio</title>
+    <link rel="stylesheet" href="port.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="fade-in">KANIGIRI SIVA SAI CHANDRA SEKHAR</h1>
+            <ul>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="fade-in">
+        <h2>About Me</h2>
+        <p>I'm a passionate web developer with experience in creating responsive and user-friendly websites. I specialize in HTML, CSS, and JavaScript, and I'm always eager to learn new technologies.</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card slide-in">
+                <h3>Project 1</h3>
+                <p>A responsive e-commerce website built with HTML, CSS, and JavaScript.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card slide-in">
+                <h3>Project 2</h3>
+                <p>A task management app with React and Node.js backend.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+            <div class="project-card slide-in">
+                <h3>Project 3</h3>
+                <p>A personal blog platform with content management system.</p>
+                <a href="#" class="project-link">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2>Contact Me</h2>
+        <div class="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+            <button onclick="submitForm()">Send Message</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
